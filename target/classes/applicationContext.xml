@@ -7,8 +7,12 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="musicBean"
-          class="ru.shulpov.springproject.RockMusic">
+<!--    <bean id="musicBean"-->
+<!--          class="ru.shulpov.springproject.RockMusic">-->
+<!--    </bean>-->
+
+    <bean id="parserBean"
+          class="ru.shulpov.springproject.Parser">
     </bean>
 
 </beans>
