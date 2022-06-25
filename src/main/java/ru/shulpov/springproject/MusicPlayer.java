@@ -1,18 +1,19 @@
 package ru.shulpov.springproject;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
     @Autowired
-    public MusicPlayer(RapMusic rapMusic, RockMusic rockMusic) {
-        this.rapMusic = rapMusic;
-        this.rockMusic = rockMusic;
+    public MusicPlayer(@Qualifier("rockMusicBean") Music music1, @Qualifier("rapMusicBean") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
     }
 
-    private RapMusic rapMusic;
-    private RockMusic rockMusic;
+    private Music music1;
+    private Music music2;
 
     public String getName() {
         return name;
@@ -38,7 +39,7 @@ public class MusicPlayer {
     }
 
     public String playMusic() {
-        return "Playing: " + rapMusic.getSong() + "\nPlaying: " + rockMusic.getSong();
+        return "Playing: " + music1.getSong() + ", " + music2.getSong();
 
     }
 }
