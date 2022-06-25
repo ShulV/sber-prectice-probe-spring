@@ -23,10 +23,12 @@
           class="ru.shulpov.springproject.PopMusic">
     </bean>
 
-    <!--  Внедрение зависимости через сеттер с использованием ref (ссылки) и value (значения)-->
-    <!--  Значения хранятся во внешнем файле  -->
+    <!--  Внедрение зависимости через сеттер с использованием ref (ссылки) и value (значения) (lesson 6)-->
+    <!--  Значения хранятся во внешнем файле  (lesson 6)-->
+    <!--  scope по умолчанию - singleton, можно устанвить prototype, чтобы создавать более 1 экземпляра объекта  -->
     <bean id="musicPlayerBean"
-          class="ru.shulpov.springproject.MusicPlayer">
+          class="ru.shulpov.springproject.MusicPlayer"
+          scope="singleton">
         <property name="music">
             <list>
                 <ref bean="musicBean1"/>

@@ -19,12 +19,25 @@ public class TestSpring {
 //        Parser parser = context.getBean("parserBean", Parser.class);
 //        parser.parse();
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
-        musicPlayer.playMusic();
+        MusicPlayer musicPlayer1 = context.getBean("musicPlayerBean", MusicPlayer.class);
+        MusicPlayer musicPlayer2 = context.getBean("musicPlayerBean", MusicPlayer.class);
+
+        boolean isSamePlayer = musicPlayer1 == musicPlayer2;
+
+        System.out.println("Один и тот же плеер: " + isSamePlayer);
+        System.out.println("musicPlayer1 = " + musicPlayer1);
+        System.out.println("musicPlayer2 = " + musicPlayer2);
+
+        musicPlayer1.setName("New player name");
+        System.out.println("musicPlayer1.getName() = " + musicPlayer1.getName());
+        System.out.println("musicPlayer2.getName() = " + musicPlayer2.getName());
 
 
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+//        musicPlayer.playMusic();
+//
+//
+//        System.out.println(musicPlayer.getName());
+//        System.out.println(musicPlayer.getVolume());
 
         context.close();
     }
