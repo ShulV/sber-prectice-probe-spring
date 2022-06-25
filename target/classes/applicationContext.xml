@@ -15,9 +15,10 @@
           class="ru.shulpov.springproject.RockMusic">
     </bean>
 
+    <!--  Внедрение зависимости через сеттер с использованием ref (ссылки)  -->
     <bean id="musicPlayerBean"
           class="ru.shulpov.springproject.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <property name="music" ref="musicBean"/>
     </bean>
 
 
