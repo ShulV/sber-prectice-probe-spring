@@ -28,7 +28,7 @@
     <!--  scope по умолчанию - singleton, можно устанвить prototype, чтобы создавать более 1 экземпляра объекта  -->
     <bean id="musicPlayerBean"
           class="ru.shulpov.springproject.MusicPlayer"
-          scope="singleton">
+          scope="prototype">
         <property name="music">
             <list>
                 <ref bean="musicBean1"/>
