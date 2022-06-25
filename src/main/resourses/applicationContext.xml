@@ -7,41 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--    <bean id="parserBean"-->
-    <!--          class="ru.shulpov.springproject.Parser">-->
-    <!--    </bean>-->
-
     <context:property-placeholder location="classpath:application.properties"/>
-
-    <bean id="musicBean1"
-          class="ru.shulpov.springproject.RockMusic"
-          init-method="myInitMethod"
-          destroy-method="myDestroyMethod"
-    >
-    </bean>
-    <bean id="musicBean2"
-          class="ru.shulpov.springproject.RapMusic">
-    </bean>
-    <bean id="musicBean3"
-          class="ru.shulpov.springproject.PopMusic">
-    </bean>
-
-    <!--  Внедрение зависимости через сеттер с использованием ref (ссылки) и value (значения) (lesson 6)-->
-    <!--  Значения хранятся во внешнем файле  (lesson 6)-->
-    <!--  scope по умолчанию - singleton, можно устанвить prototype, чтобы создавать более 1 экземпляра объекта  -->
-<!--    <bean id="musicPlayerBean"-->
-<!--          class="ru.shulpov.springproject.MusicPlayer"-->
-<!--          scope="prototype">-->
-<!--        <property name="music">-->
-<!--            <list>-->
-<!--                <ref bean="musicBean1"/>-->
-<!--                <ref bean="musicBean2"/>-->
-<!--                <ref bean="musicBean3"/>-->
-<!--            </list>-->
-<!--        </property>-->
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
+    <context:component-scan base-package="ru.shulpov.springproject"/>
 
 
 </beans>

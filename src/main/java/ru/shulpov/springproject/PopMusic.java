@@ -1,5 +1,8 @@
 package ru.shulpov.springproject;
 
+import org.springframework.stereotype.Component;
+
+@Component("popMusicBean")
 public class PopMusic implements Music{
     @Override
     public String getSong() {
