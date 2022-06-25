@@ -15,10 +15,12 @@
           class="ru.shulpov.springproject.RockMusic">
     </bean>
 
-    <!--  Внедрение зависимости через сеттер с использованием ref (ссылки)  -->
+    <!--  Внедрение зависимости через сеттер с использованием ref (ссылки) и value (значения) -->
     <bean id="musicPlayerBean"
           class="ru.shulpov.springproject.MusicPlayer">
         <property name="music" ref="musicBean"/>
+        <property name="name" value="Sweet dreams"/>
+        <property name="volume" value="50"/>
     </bean>
 
 
