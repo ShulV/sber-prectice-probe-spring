@@ -1,7 +1,10 @@
 package ru.shulpov.springproject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
-    private Music music;
+    private List<Music> musicList = new ArrayList<Music>();
 
     public String getName() {
         return name;
@@ -22,13 +25,13 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
-    public void setMusic(Music music) {
-        this.music = music;
+    public void setMusic(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     // IoC
-    public MusicPlayer(Music music) {
-        this.music = music;
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public MusicPlayer() {
@@ -36,6 +39,9 @@ public class MusicPlayer {
     }
 
     public void playMusic() {
-        System.out.println("Playing: " + this.music.getSong());
+        for(Music music: this.musicList) {
+            System.out.println("Playing: " + music.getSong());
+        }
+
     }
 }
