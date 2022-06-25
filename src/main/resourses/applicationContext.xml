@@ -11,16 +11,19 @@
     <!--          class="ru.shulpov.springproject.Parser">-->
     <!--    </bean>-->
 
+    <context:property-placeholder location="classpath:application.properties"/>
+
     <bean id="musicBean"
           class="ru.shulpov.springproject.RockMusic">
     </bean>
 
-    <!--  Внедрение зависимости через сеттер с использованием ref (ссылки) и value (значения) -->
+    <!--  Внедрение зависимости через сеттер с использованием ref (ссылки) и value (значения)-->
+    <!--  Значения хранятся во внешнем файле  -->
     <bean id="musicPlayerBean"
           class="ru.shulpov.springproject.MusicPlayer">
         <property name="music" ref="musicBean"/>
-        <property name="name" value="Sweet dreams"/>
-        <property name="volume" value="50"/>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 
