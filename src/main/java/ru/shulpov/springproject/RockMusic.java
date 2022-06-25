@@ -2,18 +2,22 @@ package ru.shulpov.springproject;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Component("rockMusicBean")
 public class RockMusic implements Music{
+    public RockMusic() {
+        this.songList.add("rock1");
+        this.songList.add("rock2");
+        this.songList.add("rock3");
+    }
+
+    private ArrayList<String> songList = new ArrayList<String>();
     @Override
-    public String getSong() {
-        return "rock";
+    public List<String> getSong() {
+        return songList;
     }
 
-    private void myInitMethod() {
-        System.out.println("test: call myInitMethod()");
-    }
-
-    private void myDestroyMethod() {
-        System.out.println("test: call myDestroyMethod()");
-    }
 }

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component
 public class MusicPlayer {
     @Autowired
@@ -38,8 +40,18 @@ public class MusicPlayer {
 
     }
 
-    public String playMusic() {
-        return "Playing: " + music1.getSong() + ", " + music2.getSong();
+    public String playMusic(MusicGenre genre) {
+        Random random = new Random();
+
+        // случайное целое число между 0 и 2
+        int randomNumber = random.nextInt(3);
+        if (genre == MusicGenre.RAP) {
+            System.out.println(music1.getSong().get(randomNumber));
+        } else if (genre == MusicGenre.ROCK) {
+            System.out.println(music2.getSong().get(randomNumber));
+        }
+
+        return "Playing: " + music1.getSong().get(randomNumber) + ", " + music2.getSong();
 
     }
 }
