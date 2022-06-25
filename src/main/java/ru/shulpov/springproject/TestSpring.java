@@ -16,10 +16,11 @@ public class TestSpring {
 //
 //        musicPlayer.playMusic();
 
-        Parser parser = context.getBean("parserBean", Parser.class);
-        parser.parse();
+//        Parser parser = context.getBean("parserBean", Parser.class);
+//        parser.parse();
 
-
+        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
+        musicPlayer.playMusic();
 
 
         context.close();
