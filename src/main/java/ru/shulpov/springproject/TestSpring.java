@@ -16,7 +16,8 @@ public class TestSpring {
 //
 //        musicPlayer.playMusic();
 
-        System.out.println(Parser.getPage());
+        Parser parser = context.getBean("parserBean", Parser.class);
+        parser.parse();
 
 
 
