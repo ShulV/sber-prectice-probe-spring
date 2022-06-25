@@ -1,10 +1,18 @@
 package ru.shulpov.springproject;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<Music>();
+    @Autowired
+    public MusicPlayer(RapMusic rapMusic, RockMusic rockMusic) {
+        this.rapMusic = rapMusic;
+        this.rockMusic = rockMusic;
+    }
+
+    private RapMusic rapMusic;
+    private RockMusic rockMusic;
 
     public String getName() {
         return name;
@@ -25,23 +33,12 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
-    public void setMusic(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
-    // IoC
-    public MusicPlayer(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
     public MusicPlayer() {
 
     }
 
-    public void playMusic() {
-        for(Music music: this.musicList) {
-            System.out.println("Playing: " + music.getSong());
-        }
+    public String playMusic() {
+        return "Playing: " + rapMusic.getSong() + "\nPlaying: " + rockMusic.getSong();
 
     }
 }
