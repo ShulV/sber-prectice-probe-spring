@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("rapMusicBean")
 public class RapMusic implements Music{
     public RapMusic() {
         this.songList.add("rap1");

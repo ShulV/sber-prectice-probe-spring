@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Component("rockMusicBean")
 public class RockMusic implements Music{
     public RockMusic() {
         this.songList.add("rock1");

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("popMusicBean")
 public class PopMusic implements Music{
     public PopMusic() {
         this.songList.add("pop1");

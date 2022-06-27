@@ -6,10 +6,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-@Component
+
 public class MusicPlayer {
-    @Autowired
-    public MusicPlayer(@Qualifier("rockMusicBean") Music music1, @Qualifier("rapMusicBean") Music music2) {
+
+    public MusicPlayer(@Qualifier("rockMusicBean") Music music1,
+                       @Qualifier("rapMusicBean") Music music2) {
         this.music1 = music1;
         this.music2 = music2;
     }
