@@ -16,7 +16,7 @@ import static java.lang.Integer.parseInt;
 public class Parser {
     private Document page;
     private List<String> titles; //заголовки данных валюты
-    private List<Currency> currencies; //коллекция данных по каждой валюте
+//    private List<Currency> currencies; //коллекция данных по каждой валюте
 
     private void readPage() throws IOException {
         String url = "https://www.cbr.ru/currency_base/daily/";

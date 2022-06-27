@@ -4,19 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
 public class MusicPlayer {
 
-    public MusicPlayer(@Qualifier("rockMusicBean") Music music1,
-                       @Qualifier("rapMusicBean") Music music2) {
-        this.music1 = music1;
-        this.music2 = music2;
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
-    private Music music1;
-    private Music music2;
+    private List<Music> musicList;
 
     public String getName() {
         return name;
@@ -37,22 +36,14 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
-    public MusicPlayer() {
-
-    }
-
-    public String playMusic(MusicGenre genre) {
+    public String playMusic() {
         Random random = new Random();
 
         // случайное целое число между 0 и 2
         int randomNumber = random.nextInt(3);
-        if (genre == MusicGenre.RAP) {
-            System.out.println(music1.getSong().get(randomNumber));
-        } else if (genre == MusicGenre.ROCK) {
-            System.out.println(music2.getSong().get(randomNumber));
-        }
+        System.out.println(this.musicList.get(randomNumber).getSong().get(0));
 
-        return "Playing: " + music1.getSong().get(randomNumber) + ", " + music2.getSong();
+        return "";
 
     }
 }
