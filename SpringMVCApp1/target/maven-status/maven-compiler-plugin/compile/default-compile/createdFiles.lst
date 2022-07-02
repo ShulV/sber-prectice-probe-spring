@@ -1,0 +1,7 @@
+ru\shulpov\springproject\controllers\SecondController.class
+ru\shulpov\springproject\models\Person.class
+ru\shulpov\springproject\controllers\PeopleController.class
+ru\shulpov\springproject\dao\PersonDAO.class
+ru\shulpov\springproject\config\MySpringMvcDispatcherServletInitializer.class
+ru\shulpov\springproject\config\SpringConfig.class
+ru\shulpov\springproject\controllers\FirstController.class
