@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import static java.lang.Integer.parseInt;
 
 @Controller
-@RequestMapping("/first")
+
 public class FirstController {
+    @GetMapping()
+    public String toPeople() {
+        return "redirect:/people";
+    }
     @GetMapping("/hello")
     public String sayHello(@RequestParam(value = "name", required = false) String name,
                            @RequestParam(value = "age", required = false) String age) {
